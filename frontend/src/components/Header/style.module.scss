@@ -1,0 +1,42 @@
+.header, ul, li{
+    display: flex;
+    align-items: center;
+}
+
+.header{
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 1rem 5%;
+
+    box-shadow: 1px 1px 5px #d0d0d0;
+    background-color: var(--color-white);
+
+    ul{
+        li{
+            font-size: 0.95rem;
+
+            color: var(--color-font);
+            margin-right: 2rem;
+
+            label{
+                font-weight: 600;
+                color: var(--color-black);
+            }
+
+            img{
+                width: 2.5rem;
+                height: 2.5rem;
+        
+                margin-left: 1rem;
+        
+                border-radius: 100%;
+            }
+        }
+
+        li:last-child{
+            margin-right: 0;
+        }
+    }
+
+}

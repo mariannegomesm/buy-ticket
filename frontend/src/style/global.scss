@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-primary: #ffffff;
+    --color-secondary: #f1ecff;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-font: #565656;
+    --color-background: #fdfdff;
+}
+
+body, input, button{
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background-color: var(--color-background);
+}
