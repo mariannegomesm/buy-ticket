@@ -1,18 +1,23 @@
 import React from "react";
 
+import style from "./style.module.scss";
+
 const Card = () => {
     return(
-        <div>
-            <img src="" alt="" />
-            <div>
+        <>
+            <label>Pacote de viagem 1</label>
+            <div className={style.card}>
+                <img src="" alt="" />
                 <div>
-                    <h3>Título</h3>
-                    <span>...</span>
+                    <div>
+                        <h3>Título</h3>
+                        <span>...</span>
+                    </div>
+                    <p>Descrição</p>
+                    <button>Carrinho</button>
                 </div>
-                <p>Descrição</p>
-                <button>Carrinho</button>
             </div>
-        </div>
+        </>
     )
 }
 
