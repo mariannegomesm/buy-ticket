@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
-export class TravelModel{
+export class TravelEntity{
     @PrimaryGeneratedColumn()
     id: number;
 
@@ -16,4 +16,7 @@ export class TravelModel{
 
     @Column("text")
     photo: string;
+
+    @Column()
+    flight: boolean
 }

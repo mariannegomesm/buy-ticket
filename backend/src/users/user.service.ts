@@ -16,4 +16,12 @@ export class UserService {
   public async createUser(user: UserDto){
     return await this.model.save(user) 
   }
+
+  public async updateTravel(id: number, user: UserDto){
+    return this.model.update(id, user);
+  }
+
+  public async deleteTravel(id: number){
+    return this.model.delete(id)
+  }
 }

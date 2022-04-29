@@ -1,5 +1,5 @@
 import { UserDto } from './userDto';
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, ParseIntPipe, Post, Put, Param, Delete } from '@nestjs/common';
 
 import { UserModel } from './user.entity';
 import { UserService } from './user.service';
@@ -16,5 +16,15 @@ export class UserController {
   @Post()
   public async createUser(@Body() user: UserDto){
     return this.userService.createUser(user)
+  }
+
+  @Put(":id")
+  public async updateTravel(@Param("id", ParseIntPipe) id: number, @Body() userData: UserDto){
+    return this.userService.updateTravel(id, userData);
+  }
+
+  @Delete(":id")
+  public async deleteTravel(@Param("id", ParseIntPipe) id: number){
+    return this.userService.deleteTravel(id);
   }
 }

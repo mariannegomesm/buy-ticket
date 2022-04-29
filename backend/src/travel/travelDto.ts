@@ -1,16 +1,18 @@
-import { IsString, IsEmail, IsNumber } from "class-validator";
+import { Column } from "typeorm";
 
-export class TravelDto{
-    @IsString()
-    title: string;
+export class TravelDto {
+   @Column()
+   title: string;
+   
+   @Column()
+   description: string;
 
-    @IsString()
-    @IsEmail()
-    description: string;
+   @Column()
+   price: number;
 
-    @IsNumber()
-    price: number;
+   @Column()
+   photo: string;
 
-    @IsString()
-    photo: string;
+    @Column()
+    flight: boolean   
 }

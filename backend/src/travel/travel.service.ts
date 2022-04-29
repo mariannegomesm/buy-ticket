@@ -2,14 +2,14 @@ import { Repository } from "typeorm";
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 
-import { TravelModel } from './travel.entity';
+import { TravelEntity } from './travel.entity';
 import { TravelDto } from "./travelDto";
 
 @Injectable()
 export class TravelService {
-  constructor(@InjectRepository(TravelModel) private model: Repository<TravelModel>) {}
+  constructor(@InjectRepository(TravelEntity) private model: Repository<TravelEntity>) {}
 
-  public async getAllTravel(): Promise<TravelModel []> {
+  public async getAllTravel(): Promise<TravelEntity []> {
     return await this.model.find()
   }
 

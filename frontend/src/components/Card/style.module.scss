@@ -1,7 +1,104 @@
-.card{
-    width: 40%;
-    height: 10rem;
+.containerCard{
+    margin-bottom: 2rem;
 
-    border: 1px solid #d8d8d8;
-    background-color: var(--color-white)
+    .package{
+        margin-bottom: 1rem !important;
+
+        color: #3b3b3b;
+
+        div{
+            display: flex;
+        }
+
+        span:first-child{
+            margin-right: 0.5rem;
+            color: var(--color-primary);
+        }
+    }
+
+    .card{
+        display: flex;
+        
+        width: 96%;
+        padding: 1rem;
+
+        border-radius: 0.5rem;
+        border-left: 3px solid var(--color-primary);
+        box-shadow: 0px 0px 3px #bfbfbf;
+        
+        background-color: var(--color-white);
+
+        .icons{
+            display: flex;
+            justify-content: space-between;
+
+            color: var(--color-primary);
+    
+            span{
+                font-size: 1.4rem;
+                margin-left: 0.5rem;
+            
+            }
+
+            div{
+                span{
+                    margin-left: 1rem;
+                }
+            }
+        }
+
+        .title{
+            width: 100%;
+
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            
+            border-bottom: 1px solid #eaeaea;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+
+            span{
+                color: #404040;
+            }
+        }
+
+        p{
+            text-align: justify;
+            margin-bottom: 3rem;
+
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+
+            color: #808080;
+        }
+
+        button{
+            display: flex;
+            align-items: center;
+
+            width: 40%;
+            height: 2rem;
+
+            border: 0px;
+            border-radius: 1rem;
+            padding: 0.5rem 1rem;
+
+            color: var(--color-white);
+            background-color: var(--color-primary);
+            
+            span{
+                font-size: 0.9rem !important;
+            }
+        }
+
+        img{
+            width: 40%;
+            margin-right: 1rem;
+
+            border-radius: 0.5rem;
+        }
+    }
 }
