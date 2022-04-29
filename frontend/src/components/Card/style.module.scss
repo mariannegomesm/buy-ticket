@@ -1,5 +1,10 @@
+.containerCard:last-child{
+    margin-right: 0px;
+}
+
 .containerCard{
     margin-bottom: 2rem;
+    margin-right: 1rem;
 
     .package{
         margin-bottom: 1rem !important;
@@ -19,7 +24,6 @@
     .card{
         display: flex;
         
-        width: 96%;
         padding: 1rem;
 
         border-radius: 0.5rem;

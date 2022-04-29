@@ -71,15 +71,20 @@ const Login = () => {
     return(
         <section className={style.sectionLogin}>
                 {!active && (
-                    <form>
-                        <h1>Entrar</h1>
-                        <label>* Email:</label>
-                        <input type="email" onChange={(e) => setUser({...user, email: e.target.value})}/>
-                        <label>* Senha: </label>
-                        <input type="password"  onChange={(e) => setUser({...user, password: e.target.value})}/>
-                        <button onClick={() => setActive(true)}>Me cadastrar</button>
-                        <button onClick={(e) => Login(e)}>Entrar</button>
-                    </form>
+                    <div className={style.containerLogin}>
+                        <form>
+                            <h1><span className="material-icons-outlined">login</span> Entrar</h1>
+                            <label><span className={`material-icons-outlined ` + style.iconLabel}>email</span> Email:</label>
+                            <input type="email" onChange={(e) => setUser({...user, email: e.target.value})} placeholder="Insira seu email"/>
+                            <label><span className={`material-icons-outlined ` + style.iconLabel}>lock</span> Senha: </label>
+                            <input type="password"  onChange={(e) => setUser({...user, password: e.target.value})} placeholder="Insira sua senha"/>
+                            <button className={style.buttonCad} onClick={() => setActive(true)}>Me cadastrar</button>
+                            <button onClick={(e) => Login(e)}>Entrar</button>
+                        </form>
+                        <div className={style.sectionLottie}>
+
+                        </div>
+                    </div>
                 )}
                 {active && (
                     <form>

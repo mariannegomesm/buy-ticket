@@ -16,4 +16,8 @@ export class TravelService {
   public async createTravel(travel: TravelDto){
     return await this.model.save(travel) 
   }
+
+  public async updateTravel(id: number, travel: TravelDto){
+    return await this.model.update(id, travel);
+  }
 }

@@ -17,11 +17,11 @@ export class UserService {
     return await this.model.save(user) 
   }
 
-  public async updateTravel(id: number, user: UserDto){
+  public async updateUser(id: number, user: UserDto){
     return this.model.update(id, user);
   }
 
-  public async deleteTravel(id: number){
+  public async deleteUser(id: number){
     return this.model.delete(id)
   }
 }

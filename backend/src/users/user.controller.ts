@@ -19,12 +19,12 @@ export class UserController {
   }
 
   @Put(":id")
-  public async updateTravel(@Param("id", ParseIntPipe) id: number, @Body() userData: UserDto){
-    return this.userService.updateTravel(id, userData);
+  public async updateUser(@Param("id", ParseIntPipe) id: number, @Body() userData: UserDto){
+    return this.userService.updateUser(id, userData);
   }
 
   @Delete(":id")
   public async deleteTravel(@Param("id", ParseIntPipe) id: number){
-    return this.userService.deleteTravel(id);
+    return this.userService.deleteUser(id);
   }
 }
