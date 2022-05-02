@@ -19,17 +19,22 @@ const Header = (user: any) => {
 
     const LogOut = () => {
         dispatch({type: action.USER_LOGOUT});
-        history.push("/login");
+        ReturnPage("/login");
     }
+
+    const ReturnPage = (route: string) => {
+        history.push(route);
+    }
+    
 
     return(
         <header className={style.header}>
-            <h3>LOGO</h3>
+            <h3 onClick={() => ReturnPage("/")}>LOGO</h3>
             <ul>
                 {topics.map((item) => (
                     <li>{item.title}</li>
                 ))}
-                <li>
+                <li onClick={() => ReturnPage("/perfil")}>
                     <label>{user.user.name}</label>
                     <img src={user.user.photo} alt="" />
                 </li>

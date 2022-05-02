@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import style from "./style.module.scss";
 
@@ -9,6 +10,7 @@ import Header from "../../components/Header";
 import HomeServices from "./services";
 
 const Home = () => {
+    const history = useHistory();
     const [allTravels, setAllTravels] = useState([])
 
     const GetAllTravels = async () => {
@@ -20,8 +22,13 @@ const Home = () => {
         GetAllTravels();
     }, [])
 
-
     const loginReducer = useSelector((state: any) => state.loginReducer);
+
+    useEffect(() => {
+        if(!loginReducer.name){
+            history.push("/error");
+        }
+    }, [])
     
     return(
         <section className={style.sectionHome}>
