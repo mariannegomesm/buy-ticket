@@ -7,6 +7,7 @@ import { AppDispatch, RootState } from "../../redux/store"
 import LoginServices from "./services";
 import style from "./style.module.scss";
 import * as Action from "../../redux/constants";
+import LottieFile from "../../components/LottieFile";
 
 interface User {
     name?: string,
@@ -73,7 +74,7 @@ const Login = () => {
                 {!active && (
                     <div className={style.containerLogin}>
                         <form>
-                            <h1><span className="material-icons-outlined">login</span> Entrar</h1>
+                            <h1><span className={`material-icons-outlined ` + style.iconLabel}>login</span> Entrar</h1>
                             <label><span className={`material-icons-outlined ` + style.iconLabel}>email</span> Email:</label>
                             <input type="email" onChange={(e) => setUser({...user, email: e.target.value})} placeholder="Insira seu email"/>
                             <label><span className={`material-icons-outlined ` + style.iconLabel}>lock</span> Senha: </label>
@@ -82,29 +83,34 @@ const Login = () => {
                             <button onClick={(e) => Login(e)}>Entrar</button>
                         </form>
                         <div className={style.sectionLottie}>
-
+                            {/* <LottieFile name="travel" width={350}/> */}
                         </div>
                     </div>
                 )}
                 {active && (
-                    <form>
-                        <h1>Cadastrar</h1>
-                        <label>* Nome:</label>
-                        <input type="text" onChange={(e) => setUser({...user, name: e.target.value})}/>
+                    <div className={style.containerRegister}>
+                        <div className={style.containerIllustration}>
+                            {/* <LottieFile name="travel" width={350}/> */}
+                        </div>
+                        <form>
+                            <h1>Cadastrar</h1>
+                            <label><span className={`material-icons-outlined ` + style.iconLabel}>person_outline</span> Nome:</label>
+                            <input type="text" onChange={(e) => setUser({...user, name: e.target.value})}/>
 
-                        <label>* Email:</label>
-                        <input type="email" onChange={(e) => setUser({...user, email: e.target.value})}/>
+                            <label><span className={`material-icons-outlined ` + style.iconLabel}>email</span> Email:</label>
+                            <input type="email" onChange={(e) => setUser({...user, email: e.target.value})}/>
 
-                        <label>* Senha: </label>
-                        <input type="password"  onChange={(e) => setUser({...user, password: e.target.value})}/>
-                        
-                        <label>* Foto de perfil: </label>
-                        <input type="file" accept="image/*" onChange={() => AddImage()} id="input"/>
-                        <img id="image" src="file_you_choose" />
-                        
-                        <button onClick={() => setActive(false)}>Já tenho cadastro</button>
-                        <button onClick={(e) => RegisterUser(e)}>Entrar</button>
-                    </form>
+                            <label><span className={`material-icons-outlined ` + style.iconLabel}>lock</span> Senha: </label>
+                            <input type="password"  onChange={(e) => setUser({...user, password: e.target.value})}/>
+                            
+                            <label><span className={`material-icons-outlined ` + style.iconLabel}>photo_camera</span> Foto de perfil: </label>
+                            <input type="file" accept="image/*" onChange={() => AddImage()} id="input" className={style.uploadImage}/>
+                            {/* <img id="image" src="file_you_choose" /> */}
+                            
+                            <button className={style.buttonCad} onClick={() => setActive(false)}>Já tenho cadastro</button>
+                            <button onClick={(e) => RegisterUser(e)}>Entrar</button>
+                        </form>
+                    </div>
                 )}
         </section>
     )

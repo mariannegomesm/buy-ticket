@@ -14,7 +14,8 @@ export class UserService {
   }
 
   public async createUser(user: UserDto){
-    return await this.model.save(user) 
+    await this.model.save(user) 
+    return "Usuário criado com sucesso";
   }
 
   public async updateUser(id: number, user: UserDto){
