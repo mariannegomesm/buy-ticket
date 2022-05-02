@@ -13,7 +13,8 @@ interface User {
     name?: string,
     email: string,
     password: string,
-    photo?: string
+    photo?: string,
+    isAdmin: string,
 }
 
 const Login = () => {
@@ -38,7 +39,7 @@ const Login = () => {
         e.preventDefault();
         
         const userFiltered = allUsers?.filter((element) => element.email == user.email && element.password == user.password);
-        if(userFiltered){
+        if(userFiltered[0].name){
             dispatch({type: Action.USER_LOGGED, payload: userFiltered[0]});
             Redirect("/");
         };
@@ -46,7 +47,6 @@ const Login = () => {
     
     const RegisterUser = async (e: MouseEvent<HTMLElement>) => {
         e.preventDefault();
-        
         await LoginServices.CreateUser(user);
         alert("Usuário criado com sucesso!");
         setActive(false)
@@ -58,7 +58,7 @@ const Login = () => {
       
         var reader = new FileReader();
         reader.onload = function(){
-            elementImage.src = this.result
+            elementImage.src = this.result;
             setUser({...user, photo: elementImage.src})
         }
         
@@ -83,7 +83,7 @@ const Login = () => {
                             <button onClick={(e) => Login(e)}>Entrar</button>
                         </form>
                         <div className={style.sectionLottie}>
-                            {/* <LottieFile name="travel" width={350}/> */}
+                            <LottieFile name="travel" width={350}/>
                         </div>
                     </div>
                 )}
@@ -93,7 +93,7 @@ const Login = () => {
                             {/* <LottieFile name="travel" width={350}/> */}
                         </div>
                         <form>
-                            <h1>Cadastrar</h1>
+                            <h1><span className="material-icons-outlined">add_circle_outline</span>Cadastrar</h1>
                             <label><span className={`material-icons-outlined ` + style.iconLabel}>person_outline</span> Nome:</label>
                             <input type="text" onChange={(e) => setUser({...user, name: e.target.value})}/>
 
@@ -103,12 +103,22 @@ const Login = () => {
                             <label><span className={`material-icons-outlined ` + style.iconLabel}>lock</span> Senha: </label>
                             <input type="password"  onChange={(e) => setUser({...user, password: e.target.value})}/>
                             
-                            <label><span className={`material-icons-outlined ` + style.iconLabel}>photo_camera</span> Foto de perfil: </label>
-                            <input type="file" accept="image/*" onChange={() => AddImage()} id="input" className={style.uploadImage}/>
-                            {/* <img id="image" src="file_you_choose" /> */}
-                            
+                            <div className={style.containerAddInfo}>
+                                <div>
+                                    <label><span className={`material-icons-outlined ` + style.iconLabel}>photo_camera</span> Foto de perfil: </label>
+                                    <input type="file" accept="image/*" onChange={() => AddImage()} id="input" className={style.uploadImage}/>
+                                    <img id="image" src="file_you_choose" />
+                                </div>
+                                <div>
+                                    <label><span className={`material-icons-outlined ` + style.iconLabel}>admin_panel_settings</span> Administrador:</label>
+                                    <select onChange={(e) => setUser({...user, isAdmin: e.target.value})}>
+                                        <option value="true">Sim</option>
+                                        <option value="false">Não</option>
+                                    </select>
+                                </div>
+                            </div>
                             <button className={style.buttonCad} onClick={() => setActive(false)}>Já tenho cadastro</button>
-                            <button onClick={(e) => RegisterUser(e)}>Entrar</button>
+                            <button onClick={(e) => RegisterUser(e)}>Registrar</button>
                         </form>
                     </div>
                 )}

@@ -13,4 +13,7 @@ export class UserDto{
 
     @IsString()
     photo: string;
+
+    @IsString()
+    isAdmin: string;
 }

@@ -17,4 +17,7 @@ export class UserModel{
 
     @Column("text")
     photo: string;
+
+    @Column("text")
+    isAdmin: string;
 }

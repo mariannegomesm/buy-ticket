@@ -4,7 +4,22 @@
     main{
         padding: 6rem 12%;
 
-        display: flex;
         width: 100%;
+
+        > h3{
+            width: 100%;
+
+            font-weight: 600;
+            font-size: 1.5rem;
+            
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+
+            border-bottom: 2px solid #ededed;
+        }
+
+        > div{
+            display: flex;
+        }
     }
 }

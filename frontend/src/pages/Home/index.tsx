@@ -27,9 +27,12 @@ const Home = () => {
         <section className={style.sectionHome}>
             <Header user={loginReducer}/>
             <main>
-                {allTravels.map((travel) => (
-                    <Card travel={travel}/>
-                ))}
+                <h3>Últimos pacotes: </h3>
+                <div>
+                    {allTravels.map((travel) => (
+                        <Card travel={travel}/>
+                    ))}
+                </div>
             </main>
         </section>
     )

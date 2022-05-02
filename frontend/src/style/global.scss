@@ -20,3 +20,13 @@ body, input, button{
 body{
     background-color: var(--color-background);
 }
+
+.sigout{
+    padding: 0.5rem;
+    font-size: 1.5rem !important;
+    
+    border-radius: 2rem;
+
+    color: var(--color-white);
+    background-color: var(--color-primary);
+}
