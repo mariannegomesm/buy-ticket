@@ -5,8 +5,6 @@ Challenge desenvolvido com intuito de aplicar os conhecimentos aprendidos em Red
 
 #### Interface:
 
-![image](https://user-images.githubusercontent.com/66935004/166264678-d563cbaf-ffc7-4178-bd62-3424c86761ae.png)
-
-![image](https://user-images.githubusercontent.com/66935004/166264706-d231897e-09b0-425e-b9b9-4a4c997accdf.png)
-
-![image](https://user-images.githubusercontent.com/66935004/166300717-5d72ce8f-ab5b-4716-bf74-87c8fb7635bd.png)
+![image](https://user-images.githubusercontent.com/66935004/166311184-2c7ec267-0d8a-4a6d-a8b9-01ab06867e6e.png)
+![image](https://user-images.githubusercontent.com/66935004/166311058-5ab02c4d-8ffe-4ba6-8b5b-01dd1be06d69.png)
+![image](https://user-images.githubusercontent.com/66935004/166311004-b8f51bb6-7d67-4294-b5fd-4033dd0e5ed3.png)
