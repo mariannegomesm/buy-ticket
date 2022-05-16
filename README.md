@@ -1,5 +1,24 @@
 # buy-ticket
+
+#### Sobre ( Projeto ainda em desenvolvimento ): 
 Challenge desenvolvido com intuito de aplicar os conhecimentos aprendidos em Redux, Typescript e Nest 🧡
+
+## 
+
+#### Tecnologias:
+Frontend: React, CSS Modules (com sass), Redux e Typescript <br />
+Backend: Node, Nest e TypeORM
+
+##
+
+#### Instalação:
+> cd backend <br />
+> npm install <br />
+> npm run start:dev <br />
+
+> cd ../frontend <br />
+> npm install <br />
+> npm start <br />
 
 ##
 
